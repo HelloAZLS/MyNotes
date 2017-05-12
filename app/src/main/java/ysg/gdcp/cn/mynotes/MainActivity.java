@@ -1,7 +1,9 @@
 package ysg.gdcp.cn.mynotes;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -105,7 +107,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.cacle:
-                Toast.makeText(this, "你点击了注销条目", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "开始注销", Toast.LENGTH_SHORT).show();
+                SharedPreferences sp =getSharedPreferences("NoteConfig", Activity.MODE_PRIVATE);
+                sp.edit().putBoolean("isLogin",false).commit();
+                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent);
                 break;
             case R.id.tong:
                 Toast.makeText(this, "开始备份", Toast.LENGTH_SHORT).show();
