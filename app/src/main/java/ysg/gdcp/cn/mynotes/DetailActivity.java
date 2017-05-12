@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import ysg.gdcp.cn.mynotes.data.NotesDatabase;
+
 /**
  * Created by Administrator on 2017/5/12 07:10.
  *

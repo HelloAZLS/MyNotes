@@ -19,6 +19,8 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import ysg.gdcp.cn.mynotes.data.NotesDatabase;
+
 /**
  * Created by Administrator on 2017/5/11 19:45.
  *

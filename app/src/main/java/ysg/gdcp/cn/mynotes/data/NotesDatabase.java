@@ -1,4 +1,4 @@
-package ysg.gdcp.cn.mynotes;
+package ysg.gdcp.cn.mynotes.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
