@@ -11,12 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class NotesDatabase extends SQLiteOpenHelper {
-   /* public static final String TABLE_NAME="Notes";
-    public static final String CONTENT="content";
-    public static final String ID="_id";
-    public  static final String imagePath="path";
-    public static final  String videoPath="video";
-    public static final String TIME = "time";*/
+
 
     public static final String TABLE_NAME = "myNotes";
     public static final String CONTENT = "content";
@@ -31,10 +26,7 @@ public class NotesDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-      /*  db.execSQL("create table " + TABLE_NAME + " (" + ID
-                + " integer primary key autoincrement," + CONTENT
-                + " text not null," + imagePath + " text not null," + videoPath
-                + " text not null," + TIME + " text not null)");*/
+
         db.execSQL("CREATE TABLE " + TABLE_NAME + " (" + ID
                 + " INTEGER PRIMARY KEY AUTOINCREMENT," + CONTENT
                 + " TEXT NOT NULL," + imagePath + " ," + videoPath
