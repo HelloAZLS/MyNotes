@@ -39,9 +39,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Bmob.initialize(this, "c022a6dff9fe2252de5e21742f40533c");
         //保存登录信息
         SharedPreferences sp =getSharedPreferences("NoteConfig",Activity.MODE_PRIVATE);
+        sp.edit().putBoolean("isLogin",true).commit();
         isLogin = sp.getBoolean("isLogin", false);
+        //检验是否自动登录
         if (isLogin){
-            ////Todo 写到这里
             Toast.makeText(this, "开始自动登录", Toast.LENGTH_SHORT).show();
             Intent intent =new Intent(LoginActivity.this,MainActivity.class);
             startActivity(intent);
@@ -64,6 +65,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String phoneNum = null;
         switch (v.getId()) {
             case R.id.btn_Code:
+                //获取验证码
                Toast.makeText(this, "获取验证码", Toast.LENGTH_SHORT).show();
                 phoneNum = etUsername.getText().toString().trim();
                 if (TextUtils.isEmpty(phoneNum)){
@@ -81,6 +83,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 });
                 break;
             case R.id.btn_login:
+                //开始登录
                 final String mCode = etCode.getText().toString().trim();
                 phoneNum = etUsername.getText().toString().trim();
                 if (TextUtils .isEmpty(mCode)&&TextUtils.isEmpty(phoneNum)){
